@@ -1,6 +1,6 @@
 #' Fonction de répartition de la distribution Arctan Marshall Olkin Weibull
 #'
-#' @param q Quantile pour lequel calculer la probabilité cumulative
+#' @param x Valeur pour laquelle calculer la probabilité cumulative
 #' @param theta Premier paramètre de la distribution provenant de la famille Arctan X
 #' @param k Deuxième paramètre de la distribution provenant de distribution de Weibull
 #' @param lambda Deuxième paramètre de la distribution provenant de distribution de Weibull

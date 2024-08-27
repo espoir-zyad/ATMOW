@@ -6,13 +6,11 @@ library(ATMOW)
 test_that("estimATMOW returns expected output", {
   data <- 1:20
 
-  # Ouvrir un appareil graphique
-  png(filename = tempfile())
+
 
   result <- estimATMOW(data, theta_init = 1, k_init = 1, lambda_init = 1, bins = 20, xlim = c(0, max(data) * 1.1), n = 1000)
 
-  # Fermer l'appareil graphique
-  dev.off()
+
 
   # Test que les paramètres estimés sont retournés sous forme de liste
   expect_true(is.list(result))

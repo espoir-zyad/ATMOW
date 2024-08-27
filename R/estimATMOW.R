@@ -52,14 +52,20 @@ estimATMOW <- function(data, theta_init = 1, k_init = 1, lambda_init = 1, bins =
 
   fit <- nlminb(start_params, negloglik, data = data, lower = lower, upper = upper)
 
+  # Assurez-vous qu'un nouvel appareil graphique interactif est ouvert
+  plot.new()
+
   # Tracé
-  plot_object = recordPlot({hist(data, breaks = bins, probability = TRUE, xlim = xlim, col = "lightblue", border = "black",
-       main = "Ajustement de la distribution ContDist", xlab = "Valeur", ylab = "Densité")
+  hist(data, breaks = bins, probability = TRUE, xlim = xlim, col = "white", border = "black",
+       main = "Histogramme des données avec densité estimées", xlab = "Valeur", ylab = "Densité")
 
   x <- seq(xlim[1], xlim[2], length.out = n)
   y <- f_ATMOW(x, fit$par)
   lines(x, y, col = "red", lwd = 2)
-})
+
+  plot_object <- recordPlot()  # Enregistre le graphique
+
+  dev.off()  # Ferme l'appareil graphique
 
   return(list( params = fit$par, plot = plot_object))
 
