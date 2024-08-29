@@ -8,7 +8,7 @@
 #' @return Une liste contenant la VaR pour le quantile q et la TVaR correspondante
 #' @export
 #'
-riskATMOW <- function(theta = 1, k = 1, lambda = 1, q = 0.95) {
+riskATMOW <- function(theta, k , lambda, q = 0.95) {
 
   # Input validation
   if (theta < 0 || theta > 1) {
@@ -43,10 +43,9 @@ riskATMOW <- function(theta = 1, k = 1, lambda = 1, q = 0.95) {
   }
 
   # Integrate to find TVaR
-  integrale <- tryCatch(
-    integrate(M, VaR, Inf),
-    error = function(e) NA
-  )
+  integrale <- integrate(M, VaR, Inf)
+
+
 
   if (is.na(integrale$value)) {
     stop("Error in integration")

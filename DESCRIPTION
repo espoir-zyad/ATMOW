@@ -3,7 +3,7 @@ Type: Package
 Title: Arctan Marshall Olkin Weibull Distribution Package
 Version: 0.1.0
 Author: Espoir Zyad KOSSOU
-Maintainer: Mintodé Nicodème ATCHADE <nickpower@gmail.com>
+Maintainer: Mintodé Nicodème ATCHADE <nickpowerabc@gmail.com>
 Description: This package provides functions for the Arctan Marshall Olkin Weibull (ATMOW) distribution, 
     including probability density, distribution function, quantile function, 
     and random value generation. It also includes a function for estimating the parameters of the distribution.
